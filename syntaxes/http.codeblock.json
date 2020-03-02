@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "http.codeblock",
+    "fileTypes": [],
+	"injectionSelector": "L:markup.fenced_code.block.markdown",
+	"patterns": [
+		{
+			"include": "#http-code-block"
+		}
+	],
+	"repository": {
+		"http-code-block": {
+			"begin": "(?<=[`~])http(\\s+[^`~]*)?$",
+			"end": "(^|\\G)(?=\\s*[`~]{3,}\\s*$)",
+			"patterns": [
+				{
+					"begin": "(^|\\G)(\\s*)(.*)",  
+					"while": "(^|\\G)(?!\\s*([`~]{3,})\\s*$)",
+					"contentName": "meta.embedded.block.http",
+					"patterns": [
+						{
+							"include": "source.http"
+						}
+					]
+				}
+			]
+		}
+	},
+	"scopeName": "text.markdown.http.codeblock"
+}

@@ -79,6 +79,13 @@
         "language": "http",
         "scopeName": "source.http",
         "path": "./syntaxes/http.tmLanguage"
+      },
+      {
+        "scopeName": "text.markdown.http.codeblock",
+        "path": "./syntaxes/http.codeblock.json",
+        "injectTo": [
+          "test.html.markdown"
+        ]
       }
     ],
     "snippets": [
@@ -654,6 +661,7 @@
     "jsonc-parser": "^2.0.2",
     "jsonpath-plus": "^0.20.1",
     "mime-types": "^2.1.14",
+    "node-gyp": "^6.1.0",
     "pretty-data": "^0.40.0",
     "tmp": "^0.0.31",
     "tough-cookie": "^3.0.1",
